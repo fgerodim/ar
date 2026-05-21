@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto AR Minecraft</title>
+    <title>AR Crocodile</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; overflow: hidden; background-color: #000; }
+        body { margin: 0; background-color: #f0f0f0; }
         model-viewer { width: 100vw; height: 100vh; }
     </style>
 </head>
 <body>
 
-    <!-- Προσθέσαμε το id="viewer" και την ιδιότητα quick-look-browsers="safari chrome" -->
-    <model-viewer id="viewer"
-        src="building.glb" 
+    <model-viewer 
+        src="crocodile.glb" 
         ar 
         ar-modes="webxr scene-viewer quick-look" 
-        camera-controls>
+        camera-controls 
+        ar-placement="floor"
+        shadow-intensity="1"
+        environment-image="neutral">
     </model-viewer>
-
-    <script>
-        // Μόλις φορτώσει η σελίδα, "εκβιάζει" το AR να ανοίξει αμέσως
-        const viewer = document.querySelector('#viewer');
-        viewer.addEventListener('load', () => {
-            viewer.activateAR();
-        });
-    </script>
 
 </body>
 </html>
